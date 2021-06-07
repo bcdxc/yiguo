@@ -1,9 +1,0 @@
-{
-  "usingComponents": {
-    "i-input-number": "../../dist/input-number/index",
-    "i-modal": "../../dist/modal/index",
-    "i-message": "../../dist/message/index",
-    "i-action-sheet": "../../dist/action-sheet/index",
-    "i-toast": "../../dist/toast/index"
-  }
-}

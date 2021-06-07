@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "i-input": "../../dist/input/index",
-    "i-message": "../../dist/message/index"
-  }
-}
