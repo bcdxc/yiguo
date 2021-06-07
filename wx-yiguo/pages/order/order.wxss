@@ -1,0 +1,135 @@
+/* pages/order/order.wxss */
+.order {
+	height: 100vh;
+	background-color: #f9f9f9;
+}
+
+.order-head {
+	margin-bottom: 10px;
+}
+
+.order-head i-tabs i-tab view i-badge view>view {
+	top: -12px;
+	right: -6px;
+}
+
+.order-main {
+	padding: 0 10px;
+
+}
+
+.order-item {
+	width: 100%;
+	/* height: 100px; */
+	padding: 5px 5px;
+	box-sizing: border-box;
+	border: 1px solid #dedede;
+	background-color: #fff;
+	box-shadow: 0 1px 0 1px #eee;
+	display: flex;
+	flex-direction: column;
+	/* justify-content: left; */
+	margin-bottom: 10px;
+	border-radius: 5px;
+}
+
+.item-head {
+	padding-bottom: 4px;
+	border-bottom: 1px solid #f3f3f3;
+}
+
+.order-head {
+	padding: 0 20px 4px;
+	border-bottom: 1px solid #f3f3f3;
+}
+
+.order-head .head-order-num {
+	font-size: 14px;
+	font-weight: 300;
+	letter-spacing: 1.2px;
+}
+
+.head-order-mes {
+	width: 100%;
+	height: 60px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-weight: 300;
+	letter-spacing: 1.3px;
+	margin-bottom: 6px;
+}
+
+.head-order-mes image {
+	width: 80px;
+	height: 60px;
+	border-radius: 5px;
+}
+
+.head-order-mes .goods-mes {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+.head-order-mes .title{
+	width: 150px;
+}
+.item-foot {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-sizing: border-box;
+	padding: 4px 18px 0;
+}
+
+.foot-left {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.foot-left text {
+	font-size: 14px;
+	font-weight: 300;
+	/* margin-right: 10px; */
+}
+
+.foot-right text {
+	font-size: 20px;
+	margin-left: 8px;
+}
+
+
+.to-del-right{
+	display: flex;
+	align-items: center;
+}
+.to-del-right .iconfont{
+	font-size: 16px;
+}
+.to-be-delivered{
+	font-size: 14px !important;
+	font-weight: 300;
+	margin-left: 2px !important;
+}
+.introduce button {
+	padding: 0;
+	padding-right: 48px;
+}
+
+.none-order {
+	width: 100%;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.none-order text {
+	color: rgba(100, 100, 100, .7);
+	font-weight: 300;
+	font-size: 18px;
+	letter-spacing: 1.5px;
+}

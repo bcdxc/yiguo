@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "i-input": "../../dist/input/index",
+    "i-toast": "../../dist/toast/index",
+    "i-modal": "../../dist/modal/index",
+    "i-switch": "../../dist/switch/index"
+  }
+}

@@ -1,0 +1,86 @@
+.common-icon {
+	font-size: 24px;
+	color: #ff4633;
+	text-align: right;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin-right: 40px;
+}
+.collect-head{
+	width: 100%;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 12px;
+}
+.collect-head text{
+	font-size: 20px;
+	font-weight: 300;
+	letter-spacing: 1.5px;
+}
+.collect {
+	height: 100vh;
+}
+.collect-main{
+	display: flex;
+	flex-direction: column;
+	padding: 0 10px;
+}
+.collect-item{
+	width: 100%;
+	height: 100px;
+	padding: 10px 5px;
+	box-sizing: border-box;
+	border: 1px solid #dedede;
+	background-color: #fff;
+	box-shadow: 0 1px 0 1px #eee;
+	display: flex;
+	justify-content: left;
+	margin-bottom: 10px;
+	border-radius: 5px;
+}
+.item-left{
+	width: 110px;
+	height: 80px;
+}
+.item-left image{
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+}
+.item-right{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-left: 70px;
+	position: relative;
+}
+.item-right .title{
+	font-size: 17px;
+	letter-spacing: 1.3px;
+	font-weight: 300;
+}
+
+.introduce button {
+	padding: 0;
+	padding-right: 48px;
+}
+
+.else-empty {
+	width: 100%;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.else-empty text {
+	color: rgba(100, 100, 100, .7);
+	font-weight: 300;
+	font-size: 18px;
+	letter-spacing: 1.5px;
+}

@@ -1,0 +1,51 @@
+<view class="home">
+  <view class="home-head">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+      class="swiper">
+      <block wx:for="{{carousel}}" wx:key="{{item.id}}">
+        <swiper-item class="swiper-item">
+          <image wx:if='{{item}}' src="../../images/{{item}}" alt=""></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class="home-main">
+    <view class="main-nav">
+      <text class="nav-item {{isActive === 1 ? 'active' : ''}}" catchtap="filterHotPot">
+        <text class="iconfont icon-huoguo"></text>
+        <text>火锅</text>
+      </text>
+      <text class="nav-item {{isActive === 2 ? 'active' : ''}}" catchtap="filterDish">
+        <text class="iconfont icon-MadebyMade-Vector-LineIcons-Nautical-Outline-"></text>
+        <text>菜品</text>
+      </text>
+      <text class="nav-item {{isActive === 3 ? 'active' : ''}}" catchtap="filterSetMeal">
+        <text class="iconfont icon-FastFood-"></text>
+        <text>套餐</text>
+      </text>
+    </view>
+    <view class="main-con">
+      <view class="con-item" wx:for="{{showGoods}}" catchtap="skipGoods" data-skipid="{{item.id}}">
+        <image src="../../images/{{item.imgUrl[1].imgName}}"></image>
+        <text class="title">{{item.goodsName}}</text>
+        <view class="item-mes">
+          <text class="price">￥{{item.price}}</text>
+          <text class="purchase">已售：{{item.purchase}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<!-- <i-tab-bar current="{{ current }}" bindchange="handleChange" color="#2d8cf0" fixed>
+  <navigator url="/pages/index/index" open-type="navigate">
+    <i-tab-bar-item key="index" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
+  </navigator>
+  <navigator url="/pages/category/category" open-type="reLaunch">
+    <i-tab-bar-item key="category" icon="other" current-icon="other" title="分类"></i-tab-bar-item>
+  </navigator>
+  <i-tab-bar-item key="cart" icon="publishgoods_fill" current-icon="publishgoods_fill" title="购物车"></i-tab-bar-item>
+  <i-tab-bar-item key="my" icon="mine" current-icon="mine_fill" title="我的"></i-tab-bar-item>
+</i-tab-bar> -->

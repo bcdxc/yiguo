@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "i-tabs": "../../dist/tabs/index",
+    "i-tab": "../../dist/tab/index",
+    "i-message": "../../dist/message/index",
+    "i-modal": "../../dist/modal/index"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#eee",
+  "backgroundTextStyle": "dark"
+}

@@ -1,0 +1,27 @@
+<view class="collect">
+	<view class="collect-head">
+		<text>全部收藏</text>
+	</view>
+	<view class="collect-main" wx:if="{{collect.length}}">
+		<view class="collect-item" wx:for="{{collect}}" data-skipid="{{item.goodsId}}" bindtap="skipGoods">
+			<view class="item-left">
+				<image src="../../images/{{item.imgUrl.imgName}}"  data-skipid="{{item.goodsId}}"></image>
+			</view>
+			<view class="item-right"  data-skipid="{{item.goodsId}}">
+				<text class="title"  data-skipid="{{item.goodsId}}">{{item.goodsName}}</text>
+				<text data-deleteid="{{item.goodsId}}" class="common-icon iconfont icon-collect"
+					catchtap="handleOpen"></text>
+			</view>
+		</view>
+	</view>
+	<view class="else-empty" wx:else>
+		<text>暂无收藏</text>
+	</view>
+	<view class="introduce">
+		<i-modal title="取消收藏" visible="{{ visible }}" actions="{{ actions }}" bind:click="cancelCollect">
+			<view>确定不要收藏我了吗？/(ㄒoㄒ)/~~</view>
+		</i-modal>
+		<i-message id="message" />
+	</view>
+
+</view>

@@ -1,0 +1,27 @@
+<view class="category">
+	<view class="category-title">
+		<text>全部类别</text>
+	</view>
+	<view class="category-main">
+		<view class="category-head">
+			<view bindtap="handlerCategory" wx:for="{{category}}" data-sign="{{item}}"
+				class="head-item {{item === className ? 'active' : ''}}">
+				<text wx:if="{{icon[item] !== undefined}}" class="iconfont icon-{{icon[item]}} common-icon"></text>
+				<text wx:else class="iconfont icon-{{icon['通用']}} common-icon"></text>
+				<text class="item-text">{{item}}</text>
+			</view>
+		</view>
+		<view class="category-con">
+			<view class="con-item" wx:for="{{goodsByClassName}}" data-goodsid="{{item.id}}" bindtap="bindGoodsList">
+				<view class="item-img">
+					<image src="../../images/{{item.imgUrl[1].imgName}}"></image>
+				</view>
+				<view class="item-right">
+					<text class="title">{{item.goodsName}}</text>
+					<text class="price">￥{{item.price}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+
+</view>

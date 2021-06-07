@@ -1,0 +1,171 @@
+.cart {
+	height: 100vh;
+	background-color: #f9f9f9;
+	padding: 0 10px;
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 58px;
+}
+
+.cart-con {
+	overflow: auto;
+	height: 100%;
+}
+
+.cart-item {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #dedede;
+	background-color: #fff;
+	box-shadow: 0 1px 0 1px #eee;
+	border-radius: 8px;
+	overflow: hidden;
+	padding: 8px;
+	margin-bottom: 10px;
+}
+
+.item-top {
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 4px;
+	border-bottom: 1px solid #f3f3f3;
+}
+
+.item-top image {
+	width: 100px;
+	height: 80px;
+	margin-right: 30px;
+	border-radius: 5px;
+}
+
+.top-right {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding-right: 30px;
+}
+
+.goods-title {
+	font-size: 18px;
+	font-weight: 300;
+	letter-spacing: 1.4px;
+}
+
+.cart-check {
+	padding: 2px 0 0 5px;
+}
+
+/*复选框外框样式*/
+checkbox .wx-checkbox-input {
+	width: 18px;
+	height: 18px;
+	border: 1px solid #999;
+	border-radius: 100%;
+}
+
+/*复选框外框选中样式*/
+/* checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+	border-color: #3cbcee;
+} */
+
+/*复选框选中后内部样式*/
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+	color: #000;
+	transform: translate(-56%, -48%) scale(.7);
+	-webkit-transform: translate(-56%, -48%) scale(.7);
+}
+
+.item-top checkbox-group{
+	height: 30px;
+}
+.item-bottom {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 4px;
+	margin-bottom: -5px;
+}
+
+.bottom-right {
+	font-size: 18px;
+}
+
+.bottom-left {
+	font-weight: 300;
+	color: #ff4633;
+}
+
+.introduce button {
+	padding: 0;
+	padding-right: 48px;
+}
+
+/* footer */
+.cart-footer {
+	width: 95%;
+	height: 50px;
+	line-height: 50px;
+	margin: 0 auto;
+	position: absolute;
+	right: 2.5%;
+	bottom: 6px;
+	border-radius: 42px;
+	border: 1px solid #dedede;
+	background-color: #fff;
+	box-shadow: 1px 1px 1px 1px #eee;
+}
+
+.footer-left {
+	/* margin-left: 20px; */
+	font-weight: 300;
+	position: absolute;
+	left: 20px;
+	top: 0;
+}
+
+.footer-right {
+	/* margin-right: 20px; */
+	font-weight: 300;
+	position: absolute;
+	right: 20px;
+	top: 0;
+}
+
+.all-price {
+	color: #ff4633;
+}
+
+.else-empty {
+	width: 100%;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.else-empty text {
+	color: rgba(100, 100, 100, .7);
+	font-weight: 300;
+	font-size: 18px;
+	letter-spacing: 1.5px;
+}
+
+.action-sheet button{
+	width: 100%;
+	padding: 0;
+	font-size: 14px;
+	font-weight: 300;
+	margin: 0;
+}
+
+.action-sheet i-button button{
+	margin: 0;
+	width: 100%;
+	overflow: auto;
+	padding: 0 10px;
+}
+/* .action-sheet button view{
+	display: block;
+	width: 375.2px;
+} */

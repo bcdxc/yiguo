@@ -1,0 +1,36 @@
+<view class="address">
+	<view class="address-head" bindtap="add">
+		<text class="iconfont icon-tianjia"></text>
+		<text>添加收获地址</text>
+	</view>
+	<view class="address-main">
+		<view wx:for="{{address}}" class="address-item">
+			<view class="item-top">
+				<view class="top-con">
+					<text class="top-user">{{item.user}}</text>
+					<text class="top-phone">{{item.phone}}</text>
+				</view>
+				<view class="top-address">
+					<text>{{item.address}}</text>
+				</view>
+			</view>
+			<view class="item-bottom">
+				<view class="switch-main">
+					<text>设为默认</text>
+					<i-switch class="switch" size="small" value="{{item.isDefault}}" bind:change="onChange" data-switchid="{{item.id}}" slot="footer">
+					</i-switch>
+				</view>
+				<text data-delid="{{item.id}}" catchtap="handleOpen" class="iconfont icon-delete"></text>
+			</view>
+		</view>
+	</view>
+
+	<view class="introduce">
+		<i-toast id="toast" />
+		<i-modal title="删除地址" visible="{{ visible }}" actions="{{ actions }}" bind:click="delete">
+			<view>确定删除该地址吗？</view>
+		</i-modal>
+	</view>
+
+</view>
+<!-- 河北省秦皇岛市海港区西港镇河北大街西段360号河北科技师范学院 -->

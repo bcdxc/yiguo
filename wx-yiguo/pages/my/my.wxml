@@ -1,0 +1,45 @@
+<view class="my">
+	<view class="my-head">
+		<view class="protrait">
+			<text class="my-icon iconfont icon-touxiang1"></text>
+		</view>
+		<view class="head-mes">
+			<text class="ctrl-text">{{user.user}}</text>
+			<text>{{showPhone}}</text>
+		</view>
+		<image class="logo" src="../../images/logo1.png"></image>
+	</view>
+	<view class="my-con">
+		<text class="my-con-title">常用功能</text>
+		<view class="domain">
+			<navigator url="/pages/order/order" class="common">
+				<text class="domain-text">我的订单</text>
+				<text class="iconfont icon-icon_arrowright"></text>
+			</navigator>
+			<navigator url="/pages/collect/collect" class="common">
+				<text class="domain-text">我的收藏</text>
+				<text class="iconfont icon-icon_arrowright"></text>
+			</navigator>
+			<navigator url="/pages/address/address" class="common">
+				<text class="domain-text">我的地址</text>
+				<text class="iconfont icon-icon_arrowright"></text>
+			</navigator>
+			<navigator url="/pages/myComment/myComment" class="common">
+				<text class="domain-text">我的评价</text>
+				<text class="iconfont icon-icon_arrowright"></text>
+			</navigator>
+			<navigator url="/pages/suggest/suggest" class="common">
+				<text class="domain-text">建议反馈</text>
+				<text class="iconfont icon-icon_arrowright"></text>
+			</navigator>
+			<navigator url="/pages/about/about" class="common">
+				<text class="domain-text">关于本店</text>
+				<text class="iconfont icon-icon_arrowright"></text>
+			</navigator>
+		</view>
+	</view>
+	<view class="my-foot">
+		<text>提示：</text>
+		<text>本小程序仅支持在秦皇岛市海港区购买商品！</text>
+	</view>
+</view>

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "i-button": "../../dist/button/index"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#eee",
+  "backgroundTextStyle": "dark"
+}

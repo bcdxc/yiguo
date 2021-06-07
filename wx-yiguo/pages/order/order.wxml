@@ -1,0 +1,174 @@
+<view class="order">
+	<view class="order-head">
+		<i-tabs current="{{ current }}" bindchange="handleChange">
+			<i-tab key="tab1" title="全部订单"></i-tab>
+			<i-tab key="tab2" title="待发货" count="{{toBeDelivered.length}}"></i-tab>
+			<i-tab key="tab3" title="待收货" count="{{toBeReceived.length}}"></i-tab>
+			<i-tab key="tab4" title="待评价" count="{{toBeEvaluated.length}}"></i-tab>
+		</i-tabs>
+	</view>
+	<view class="order-main">
+		<!-- 全部订单 -->
+		<view wx:if="{{current === 'tab1'}}">
+			<view wx:if="{{order.length}}">
+				<view class="order-item" wx:for="{{order}}" wx:for-item="i" wx:for-index="i_index" wx:key="i_index">
+					<view class="item-head">
+						<view class="item-main">
+							<view class="order-head">
+								<text class="head-order-num">订单号: {{i.createTime}}</text>
+							</view>
+						</view>
+						<view class="head-item" wx:for="{{i.goodsList}}" wx:for-item="j" wx:for-index="j_index"
+							wx:key="j_index">
+
+							<view class="head-order-mes">
+								<image src="../../images/{{j.imgUrl}}"></image>
+								<text class="title">{{j.goodsName}}</text>
+								<view class="goods-mes">
+									<text class="price">￥{{j.price}}</text>
+									<text class="quantity">x {{j.quantity}}</text>
+								</view>
+							</view>
+						</view>
+					</view>
+					<view class="item-foot">
+						<view class="foot-left">
+							<text>实付款：￥{{i.cost}}元</text>
+						</view>
+						<view class="foot-right" wx:if="{{i.orderStatus === 3 ||i.orderStatus === 4}}">
+							<text class="del iconfont icon-delete" data-delid="{{i.id}}" catchtap="handleOpen"></text>
+							<text wx:if="{{!i.isEvaluate}}" class="evaluate iconfont icon-shinshopdaipingjia"
+								data-goods="{{i.goodsList}}" data-orderid="{{i.id}}" data-ordernum="{{i.createTime}}"
+								catchtap="goEvaluate"></text>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="none-order" wx:else>
+				<text>暂无订单</text>
+			</view>
+		</view>
+
+		<!-- 待发货 -->
+		<view wx:elif="{{current === 'tab2'}}">
+			<view wx:if="{{toBeDelivered.length}}">
+				<view class="order-item" wx:for="{{toBeDelivered}}" wx:for-item="i" wx:for-index="i_index"
+					wx:key="i_index">
+					<view class="item-head">
+						<view class="order-head">
+							<text class="head-order-num">订单号: {{i.createTime}}</text>
+						</view>
+						<view class="head-item" wx:for="{{i.goodsList}}" wx:for-item="j" wx:for-index="j_index"
+							wx:key="j_index">
+							<view class="head-order-mes">
+								<image src="../../images/{{j.imgUrl}}"></image>
+								<text class="title">{{j.goodsName}}</text>
+								<view class="goods-mes">
+									<text class="price">￥{{j.price}}</text>
+									<text class="quantity">x {{j.quantity}}</text>
+								</view>
+							</view>
+						</view>
+					</view>
+					<view class="item-foot">
+						<view class="foot-left">
+							<text>实付款：￥{{i.cost}}元</text>
+						</view>
+						<view class="foot-right to-del-right">
+							<text class="iconfont icon-wait"></text>
+							<text class="to-be-delivered">商家正在备货中...</text>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="none-order" wx:else>
+				<text>暂无订单</text>
+			</view>
+		</view>
+		<!-- 待收货 -->
+		<view wx:elif="{{current === 'tab3'}}">
+			<view wx:if="{{toBeReceived.length}}">
+				<view class="order-item" wx:for="{{toBeReceived}}" wx:for-item="i" wx:for-index="i_index"
+					wx:key="i_index">
+					<view class="item-head">
+						<view class="order-head">
+							<text class="head-order-num">订单号: {{i.createTime}}</text>
+						</view>
+						<view class="head-item" wx:for="{{i.goodsList}}" wx:for-item="j" wx:for-index="j_index"
+							wx:key="j_index">
+							<view class="head-order-mes">
+								<image src="../../images/{{j.imgUrl}}"></image>
+								<text class="title">{{j.goodsName}}</text>
+								<view class="goods-mes">
+									<text class="price">￥{{j.price}}</text>
+									<text class="quantity">x {{j.quantity}}</text>
+								</view>
+							</view>
+						</view>
+					</view>
+					<view class="item-foot">
+						<view class="foot-left">
+							<text>实付款：￥{{i.cost}}元</text>
+						</view>
+						<view class="foot-right">
+							<text data-resid="{{i.id}}" catchtap="handleOpen2" class="iconfont icon-shouhuo"></text>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="none-order" wx:else>
+				<text>暂无订单</text>
+			</view>
+		</view>
+
+		<!-- 待评价 -->
+		<view wx:elif="{{current === 'tab4'}}">
+			<view wx:if="{{toBeEvaluated.length}}">
+				<view class="order-item" wx:for="{{toBeEvaluated}}" wx:for-item="i" wx:for-index="i_index"
+					wx:key="i_index">
+					<view class="item-head">
+						<view class="order-head">
+							<text class="head-order-num">订单号: {{i.createTime}}</text>
+						</view>
+						<view class="head-item" wx:for="{{i.goodsList}}" wx:for-item="j" wx:for-index="j_index"
+							wx:key="j_index">
+
+							<view class="head-order-mes">
+								<image src="../../images/{{j.imgUrl}}"></image>
+								<text class="title">{{j.goodsName}}</text>
+								<view class="goods-mes">
+									<text class="price">￥{{j.price}}</text>
+									<text class="quantity">x {{j.quantity}}</text>
+								</view>
+							</view>
+						</view>
+					</view>
+					<view class="item-foot">
+						<view class="foot-left">
+							<text>实付款：￥{{i.cost}}元</text>
+						</view>
+						<view class="foot-right">
+							<text class="evaluate iconfont icon-shinshopdaipingjia" data-goods="{{i.goodsList}}"
+								data-orderid="{{i.id}}" data-ordernum="{{i.createTime}}" catchtap="goEvaluate"></text>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="none-order" wx:else>
+				<text>暂无订单</text>
+			</view>
+		</view>
+	</view>
+
+	<view class="introduce">
+		<i-modal title="确定删除吗?" visible="{{ visible }}" actions="{{ actions }}" bind:click="delete">
+			<view>删除后无法恢复哦</view>
+		</i-modal>
+
+		<i-modal title="确认收货吗？" visible="{{ visible2 }}" actions="{{ actions2 }}" bind:click="collectGoods">
+			<view>收货后无法恢复哦</view>
+		</i-modal>
+
+		<i-message id="message" />
+	</view>
+</view>

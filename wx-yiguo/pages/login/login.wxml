@@ -1,0 +1,13 @@
+<view class="login-head">
+	<image src="../../images/logo.jpg" alt=""></image>
+	<text class="welcome">欢迎登录</text>
+</view>
+<view class="login-con">
+    <i-input value="{{ username }}"  class="common-input" type="text" mode="wrapped" title="账号" autofocus placeholder="请输入账号" maxlength="14" bind:change="inputChange" data-sign="username" />
+	<i-input value="{{ password }}" class="common-input" maxlength="16" mode="wrapped" type="password" title="密码" placeholder="请输入密码"  bind:change="inputChange" data-sign="password" />
+	<view class="btns">
+		<i-button bind:click="register" size="small" type="primary">注册</i-button>
+		<i-button bind:click="login" size="small" type="success">登录</i-button>
+	</view>
+	<i-message id="message" />
+</view>
